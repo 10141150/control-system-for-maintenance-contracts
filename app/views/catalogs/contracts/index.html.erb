@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Catalogs Contracts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Device</th>
+      <th>Supplier</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Contract no</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @catalogs_contracts.each do |catalogs_contract| %>
+      <tr>
+        <td><%= catalogs_contract.device_id %></td>
+        <td><%= catalogs_contract.supplier_id %></td>
+        <td><%= catalogs_contract.start_date %></td>
+        <td><%= catalogs_contract.end_date %></td>
+        <td><%= catalogs_contract.contract_no %></td>
+        <td><%= link_to 'Show', catalogs_contract %></td>
+        <td><%= link_to 'Edit', edit_catalogs_contract_path(catalogs_contract) %></td>
+        <td><%= link_to 'Destroy', catalogs_contract, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contract', new_catalogs_contract_path %>

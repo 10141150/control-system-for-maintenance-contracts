@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @catalogs_device.name %>
+</p>
+
+<p>
+  <strong>Unam stock number:</strong>
+  <%= @catalogs_device.unam_stock_number %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @catalogs_device.location_id %>
+</p>
+
+<%= link_to 'Edit', edit_catalogs_device_path(@catalogs_device) %> |
+<%= link_to 'Back', catalogs_devices_path %>

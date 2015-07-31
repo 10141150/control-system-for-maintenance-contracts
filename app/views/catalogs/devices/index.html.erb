@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Catalogs Devices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Unam stock number</th>
+      <th>Location</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @catalogs_devices.each do |catalogs_device| %>
+      <tr>
+        <td><%= catalogs_device.name %></td>
+        <td><%= catalogs_device.unam_stock_number %></td>
+        <td><%= catalogs_device.location_id %></td>
+        <td><%= link_to 'Show', catalogs_device %></td>
+        <td><%= link_to 'Edit', edit_catalogs_device_path(catalogs_device) %></td>
+        <td><%= link_to 'Destroy', catalogs_device, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Device', new_catalogs_device_path %>

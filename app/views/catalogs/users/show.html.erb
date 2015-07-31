@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @catalogs_user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @catalogs_user.email %>
+</p>
+
+<p>
+  <strong>User name:</strong>
+  <%= @catalogs_user.user_name %>
+</p>
+
+<%= link_to 'Edit', edit_catalogs_user_path(@catalogs_user) %> |
+<%= link_to 'Back', catalogs_users_path %>

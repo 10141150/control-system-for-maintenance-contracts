@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Device:</strong>
+  <%= @catalogs_contract.device_id %>
+</p>
+
+<p>
+  <strong>Supplier:</strong>
+  <%= @catalogs_contract.supplier_id %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @catalogs_contract.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @catalogs_contract.end_date %>
+</p>
+
+<p>
+  <strong>Contract no:</strong>
+  <%= @catalogs_contract.contract_no %>
+</p>
+
+<%= link_to 'Edit', edit_catalogs_contract_path(@catalogs_contract) %> |
+<%= link_to 'Back', catalogs_contracts_path %>

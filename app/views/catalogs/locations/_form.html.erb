@@ -1,0 +1,29 @@
+<%= form_for(@catalogs_location) do |f| %>
+  <% if @catalogs_location.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@catalogs_location.errors.count, "error") %> prohibited this catalogs_location from being saved:</h2>
+
+      <ul>
+      <% @catalogs_location.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :department %><br>
+    <%= f.text_field :department %>
+  </div>
+  <div class="field">
+    <%= f.label :responsible %><br>
+    <%= f.text_field :responsible %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

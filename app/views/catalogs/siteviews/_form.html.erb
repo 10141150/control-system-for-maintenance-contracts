@@ -1,0 +1,25 @@
+<%= form_for(@catalogs_siteview) do |f| %>
+  <% if @catalogs_siteview.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@catalogs_siteview.errors.count, "error") %> prohibited this catalogs_siteview from being saved:</h2>
+
+      <ul>
+      <% @catalogs_siteview.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :contract_id %><br>
+    <%= f.number_field :contract_id %>
+  </div>
+  <div class="field">
+    <%= f.label :visit_date %><br>
+    <%= f.date_select :visit_date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

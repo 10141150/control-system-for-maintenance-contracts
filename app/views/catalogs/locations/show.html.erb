@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @catalogs_location.department %>
+</p>
+
+<p>
+  <strong>Responsible:</strong>
+  <%= @catalogs_location.responsible %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @catalogs_location.email %>
+</p>
+
+<%= link_to 'Edit', edit_catalogs_location_path(@catalogs_location) %> |
+<%= link_to 'Back', catalogs_locations_path %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Business name:</strong>
+  <%= @catalogs_supplier.business_name %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @catalogs_supplier.contact %>
+</p>
+
+<p>
+  <strong>Phones:</strong>
+  <%= @catalogs_supplier.phones %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @catalogs_supplier.email %>
+</p>
+
+<%= link_to 'Edit', edit_catalogs_supplier_path(@catalogs_supplier) %> |
+<%= link_to 'Back', catalogs_suppliers_path %>

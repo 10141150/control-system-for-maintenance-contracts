@@ -1,0 +1,29 @@
+<%= form_for(@catalogs_device) do |f| %>
+  <% if @catalogs_device.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@catalogs_device.errors.count, "error") %> prohibited this catalogs_device from being saved:</h2>
+
+      <ul>
+      <% @catalogs_device.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :unam_stock_number %><br>
+    <%= f.text_field :unam_stock_number %>
+  </div>
+  <div class="field">
+    <%= f.label :location_id %><br>
+    <%= f.number_field :location_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

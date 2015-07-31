@@ -1,0 +1,37 @@
+<%= form_for(@catalogs_contract) do |f| %>
+  <% if @catalogs_contract.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@catalogs_contract.errors.count, "error") %> prohibited this catalogs_contract from being saved:</h2>
+
+      <ul>
+      <% @catalogs_contract.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :device_id %><br>
+    <%= f.number_field :device_id %>
+  </div>
+  <div class="field">
+    <%= f.label :supplier_id %><br>
+    <%= f.number_field :supplier_id %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date %><br>
+    <%= f.date_select :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date %><br>
+    <%= f.date_select :end_date %>
+  </div>
+  <div class="field">
+    <%= f.label :contract_no %><br>
+    <%= f.text_field :contract_no %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

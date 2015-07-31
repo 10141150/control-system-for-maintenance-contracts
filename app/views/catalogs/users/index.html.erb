@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Catalogs Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>User name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @catalogs_users.each do |catalogs_user| %>
+      <tr>
+        <td><%= catalogs_user.name %></td>
+        <td><%= catalogs_user.email %></td>
+        <td><%= catalogs_user.user_name %></td>
+        <td><%= link_to 'Show', catalogs_user %></td>
+        <td><%= link_to 'Edit', edit_catalogs_user_path(catalogs_user) %></td>
+        <td><%= link_to 'Destroy', catalogs_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_catalogs_user_path %>
