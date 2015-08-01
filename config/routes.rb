@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  namespace :log do
+  get 'sign/out'
+  end
+
+  devise_for :users, class_name: "Login::User"
   namespace :catalogs do
     resources :contracts
   end

@@ -1,0 +1,2 @@
+module Log::SignHelper
+end
