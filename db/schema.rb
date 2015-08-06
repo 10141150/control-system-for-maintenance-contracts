@@ -16,48 +16,17 @@ ActiveRecord::Schema.define(version: 20150801015644) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "catalog_contract_types", force: :cascade do |t|
-    t.string   "Type",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "catalog_devices", force: :cascade do |t|
-    t.string   "Name",         null: false
-    t.string   "Stock_number", null: false
-    t.integer  "Supplier_id",  null: false
-    t.integer  "Location_id",  null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
-  create_table "catalog_locations", force: :cascade do |t|
-    t.string   "Laboratory_Department", null: false
-    t.string   "Manager",               null: false
-    t.string   "Mail",                  null: false
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
-  end
-
-  create_table "catalog_suppliers", force: :cascade do |t|
-    t.string   "Business_name",    null: false
-    t.string   "Contact",          null: false
-    t.string   "Phone",            null: false
-    t.string   "Mail",             null: false
-    t.integer  "Contract_type_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
   create_table "catalogs_contracts", force: :cascade do |t|
-    t.integer  "device_id"
-    t.integer  "supplier_id"
-    t.date     "start_date"
-    t.date     "end_date"
-    t.string   "contract_no"
+    t.integer  "device_id",   null: false
+    t.integer  "supplier_id", null: false
+    t.date     "start_date",  null: false
+    t.date     "end_date",    null: false
+    t.string   "contract_no", null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  add_index "catalogs_contracts", ["device_id"], name: "index_catalogs_contracts_on_device_id", unique: true, using: :btree
 
   create_table "catalogs_devices", force: :cascade do |t|
     t.string   "name"
@@ -78,6 +47,7 @@ ActiveRecord::Schema.define(version: 20150801015644) do
   create_table "catalogs_siteviews", force: :cascade do |t|
     t.integer  "contract_id"
     t.date     "visit_date"
+    t.boolean  "completed"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -117,22 +87,8 @@ ActiveRecord::Schema.define(version: 20150801015644) do
   add_index "login_users", ["login"], name: "index_login_users_on_login", unique: true, using: :btree
   add_index "login_users", ["reset_password_token"], name: "index_login_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "users", force: :cascade do |t|
-    t.string   "login",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.inet     "current_sign_in_ip"
-    t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-  end
-
-  add_index "users", ["login"], name: "index_users_on_login", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-
+  add_foreign_key "catalogs_contracts", "catalogs_devices", column: "device_id"
+  add_foreign_key "catalogs_contracts", "catalogs_suppliers", column: "supplier_id"
+  add_foreign_key "catalogs_devices", "catalogs_locations", column: "location_id"
+  add_foreign_key "catalogs_siteviews", "catalogs_contracts", column: "contract_id"
 end
