@@ -2,8 +2,10 @@
 
 one:
   contract_id: 1
-  visit_date: 2015-07-31
+  visit_date: 2015-08-06
+  completed: false
 
 two:
   contract_id: 1
-  visit_date: 2015-07-31
+  visit_date: 2015-08-06
+  completed: false

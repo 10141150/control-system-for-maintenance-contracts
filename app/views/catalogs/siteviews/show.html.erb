@@ -10,5 +10,10 @@
   <%= @catalogs_siteview.visit_date %>
 </p>
 
+<p>
+  <strong>Completed:</strong>
+  <%= @catalogs_siteview.completed %>
+</p>
+
 <%= link_to 'Edit', edit_catalogs_siteview_path(@catalogs_siteview) %> |
 <%= link_to 'Back', catalogs_siteviews_path %>

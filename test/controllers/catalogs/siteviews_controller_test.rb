@@ -18,7 +18,7 @@ class Catalogs::SiteviewsControllerTest < ActionController::TestCase
 
   test "should create catalogs_siteview" do
     assert_difference('Catalogs::Siteview.count') do
-      post :create, catalogs_siteview: { contract_id: @catalogs_siteview.contract_id, visit_date: @catalogs_siteview.visit_date }
+      post :create, catalogs_siteview: { completed: @catalogs_siteview.completed, contract_id: @catalogs_siteview.contract_id, visit_date: @catalogs_siteview.visit_date }
     end
 
     assert_redirected_to catalogs_siteview_path(assigns(:catalogs_siteview))
@@ -35,7 +35,7 @@ class Catalogs::SiteviewsControllerTest < ActionController::TestCase
   end
 
   test "should update catalogs_siteview" do
-    patch :update, id: @catalogs_siteview, catalogs_siteview: { contract_id: @catalogs_siteview.contract_id, visit_date: @catalogs_siteview.visit_date }
+    patch :update, id: @catalogs_siteview, catalogs_siteview: { completed: @catalogs_siteview.completed, contract_id: @catalogs_siteview.contract_id, visit_date: @catalogs_siteview.visit_date }
     assert_redirected_to catalogs_siteview_path(assigns(:catalogs_siteview))
   end
 

@@ -69,6 +69,6 @@ class Catalogs::SiteviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def catalogs_siteview_params
-      params.require(:catalogs_siteview).permit(:contract_id, :visit_date)
+      params.require(:catalogs_siteview).permit(:contract_id, :visit_date, :completed)
     end
 end

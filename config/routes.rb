@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :catalogs do
+    resources :siteviews
+  end
   namespace :log do
   get 'sign/out'
   end
@@ -9,9 +12,6 @@ Rails.application.routes.draw do
   end
   namespace :catalogs do
     resources :locations
-  end
-  namespace :catalogs do
-    resources :siteviews
   end
   namespace :catalogs do
     resources :devices
