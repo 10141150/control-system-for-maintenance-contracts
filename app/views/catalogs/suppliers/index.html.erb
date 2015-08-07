@@ -2,7 +2,7 @@
 
 <h1>Listing Catalogs Suppliers</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Business name</th>
@@ -20,9 +20,9 @@
         <td><%= catalogs_supplier.contact %></td>
         <td><%= catalogs_supplier.phones %></td>
         <td><%= catalogs_supplier.email %></td>
-        <td><%= link_to 'Show', catalogs_supplier %></td>
-        <td><%= link_to 'Edit', edit_catalogs_supplier_path(catalogs_supplier) %></td>
-        <td><%= link_to 'Destroy', catalogs_supplier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><a class="btn btn-danger" <%= link_to '<i class="fa fa-list"></i>'.html_safe, catalogs_supplier %></a></td>
+        <td><a class="btn btn-danger" <%= link_to '<i class="fa fa-pencil-square-o"></i>'.html_safe, edit_catalogs_supplier_path(catalogs_supplier) %></td>
+        <td><a class="btn btn-danger" <%= link_to '<i class="fa fa-bomb"></i>'.html_safe, catalogs_supplier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Supplier', new_catalogs_supplier_path %>
+<a class="btn btn-danger" <%= link_to 'New Supplier', new_catalogs_supplier_path %></a>
