@@ -27,11 +27,13 @@ body {
 
 .backcontainer {
     background-image:url('http://static.tumblr.com/y2cy4ou/9Allo6uju/etv__5_.png'); 
+    background-repeat:repeat;
     //width:
-    height: 600px;     
+    // height: 700px;     
 }
 .container {
     background-color: white;
+    height: 700px;
 }
 #header {
     background-image :url('http://www.neuroespacio.com/wp-content/uploads/2012/01/inst_instneurobio2.jpg');
