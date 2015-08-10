@@ -21,9 +21,9 @@
         <td><%= catalogs_supplier.contact %></td>
         <td><%= catalogs_supplier.phones %></td>
         <td><%= catalogs_supplier.email %></td>
-        <td><a class="btn btn-danger" <%= link_to '<i class="fa fa-eye" alt="Show" title="Show"></i>'.html_safe, catalogs_supplier %></a></td>
-        <td><a class="btn btn-danger" <%= link_to '<i class="fa fa-pencil-square-o" alt="Edit" title="Edit"></i>'.html_safe, edit_catalogs_supplier_path(catalogs_supplier) %></td>
-        <td><a class="btn btn-danger" <%= link_to '<i class="fa fa-trash-o" alt="Trash" title="Trash"></i>'.html_safe, catalogs_supplier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><a class="btn btn-ttc" <%= link_to '<i class="fa fa-eye" alt="Show" title="Show"></i>'.html_safe, catalogs_supplier %></a></td>
+        <td><a class="btn btn-ttc" <%= link_to '<i class="fa fa-pencil-square-o" alt="Edit" title="Edit"></i>'.html_safe, edit_catalogs_supplier_path(catalogs_supplier) %></td>
+        <td><a class="btn btn-ttc" <%= link_to '<i class="fa fa-trash-o" alt="Trash" title="Trash"></i>'.html_safe, catalogs_supplier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<a class="btn btn-danger" <%= link_to 'New Supplier', new_catalogs_supplier_path %></a>
+<a class="btn btn-ttc" <%= link_to 'New Supplier', new_catalogs_supplier_path %></a>

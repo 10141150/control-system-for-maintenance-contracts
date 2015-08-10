@@ -1,4 +1,5 @@
 /*
+}http://belleviewchristian.com/wp-content/uploads/2014/03/blue-wallpaper-background-texture-checkbox.jpg
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -26,7 +27,7 @@ body {
 }
 
 .backcontainer {
-    background-image:url('http://static.tumblr.com/y2cy4ou/9Allo6uju/etv__5_.png'); 
+    background-image:url('http://www.mercier-flooring.com/media/grade/Cabreuva-Selectionne.jpg'); 
     background-repeat:repeat;
     //width:
     // height: 700px;     
@@ -40,7 +41,6 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     width:100%; 
-    color: red;
     height: 60px;
 }
 .wrap {
@@ -52,14 +52,21 @@ body {
     padding: 0 0 60px;
 }
 .text-center {
-    color: white;
+    background-color: white;
     height: 60px;
-    background-color:rgb(119,33,38);
 }
 
 .containerfooter{
   color: white;
   width: 100%;
-  padding: 15px 15px;
-  
+  padding: 15px 15px; 
+  background-color: rgb(63,15,11);
+}
+.btn-ttc,
+.btn-ttc:visited,
+.btn-ttc:hover,
+.btn-ttc:active {
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: rgb(204,106,50);
 }
